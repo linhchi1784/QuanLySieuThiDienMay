@@ -5,6 +5,8 @@ namespace QuanLySieuThiDienMay
         public Form1()
         {
             InitializeComponent();
+
+            //first commit
         }
     }
 }
