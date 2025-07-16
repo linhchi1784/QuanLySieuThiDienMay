@@ -1,6 +1,6 @@
 ﻿namespace QuanLySieuThiDienMay
 {
-    partial class Form1
+    partial class TrangChu
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
             menuStrip1 = new MenuStrip();
             tsmMenu = new ToolStripMenuItem();
             thôngTinNhânViênToolStripMenuItem = new ToolStripMenuItem();
@@ -42,7 +42,10 @@
             thốngKêVàBáoCáoToolStripMenuItem = new ToolStripMenuItem();
             thốngKêDoanhThuToolStripMenuItem = new ToolStripMenuItem();
             tínhLươngNhânViênToolStripMenuItem = new ToolStripMenuItem();
+            toolStrip1 = new ToolStrip();
+            btnDangXuat = new ToolStripButton();
             menuStrip1.SuspendLayout();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -131,6 +134,27 @@
             tínhLươngNhânViênToolStripMenuItem.Size = new Size(230, 26);
             tínhLươngNhânViênToolStripMenuItem.Text = "Tính lương nhân viên";
             // 
+            // toolStrip1
+            // 
+            toolStrip1.Dock = DockStyle.Left;
+            toolStrip1.ImageScalingSize = new Size(20, 20);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnDangXuat });
+            toolStrip1.Location = new Point(0, 28);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(40, 541);
+            toolStrip1.TabIndex = 1;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // btnDangXuat
+            // 
+            btnDangXuat.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnDangXuat.Image = (Image)resources.GetObject("btnDangXuat.Image");
+            btnDangXuat.ImageTransparentColor = Color.Magenta;
+            btnDangXuat.Name = "btnDangXuat";
+            btnDangXuat.Size = new Size(37, 24);
+            btnDangXuat.Text = "toolStripButton1";
+            btnDangXuat.Click += btnDangXuat_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -138,6 +162,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(831, 569);
+            Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "Form1";
@@ -146,6 +171,8 @@
             WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -165,5 +192,7 @@
         private ToolStripMenuItem thốngKêVàBáoCáoToolStripMenuItem;
         private ToolStripMenuItem thốngKêDoanhThuToolStripMenuItem;
         private ToolStripMenuItem tínhLươngNhânViênToolStripMenuItem;
+        private ToolStrip toolStrip1;
+        private ToolStripButton btnDangXuat;
     }
 }
