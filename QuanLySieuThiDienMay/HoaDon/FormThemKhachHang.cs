@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLySieuThiDienMay
+namespace DOAN1
 {
     public partial class FormThemKhachHang : Form
     {
@@ -24,7 +24,7 @@ namespace QuanLySieuThiDienMay
             maKhachHangMoi = value;
         }
 
-        string connectionString = "server=localhost;uid=root;pwd=;database=qlbanhang;";
+        string connectionString = "server=localhost;uid=root;pwd=;database=sieuthidienmay;";
         private string maKhachHangMoi;
 
         public FormThemKhachHang()
@@ -34,7 +34,8 @@ namespace QuanLySieuThiDienMay
 
         private void FormThemKhachHang_Load(object sender, EventArgs e)
         {
-
+            SetMaKhachHangMoi(TaoMaKhachHangTuDong());
+            txtMakh.Text = GetMaKhachHangMoi().ToString();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -48,7 +49,6 @@ namespace QuanLySieuThiDienMay
                 return;
             }
 
-            SetMaKhachHangMoi(TaoMaKhachHangTuDong());
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -84,6 +84,11 @@ namespace QuanLySieuThiDienMay
                 }
             }
             return maMoi;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

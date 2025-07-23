@@ -4,9 +4,12 @@ namespace chamcong
 {
     public partial class NVchamcong : Form
     {
-        public NVchamcong()
+        String maNhanVien;
+        public NVchamcong(String _maNhanVien)
         {
             InitializeComponent();
+            maNhanVien = _maNhanVien;
+            txt_manv.Text = maNhanVien;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,7 +52,7 @@ namespace chamcong
         private bool ChamCongCa(MySqlConnection conn, string maNV, DateTime ngayCham, int ca)
         {
             // Kiểm tra đã chấm công chưa
-            string checkQuery = "SELECT COUNT(*) FROM chamcong WHERE MaNhanVien=@maNV AND DATE(ngayChamCong)=DATE(@ngay) AND caLam=@ca";
+            string checkQuery = "SELECT COUNT(*) FROM tt_chamcong WHERE MaNhanVien=@maNV AND DATE(ngayChamCong)=DATE(@ngay) AND caLam=@ca";
             MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn);
             checkCmd.Parameters.AddWithValue("@maNV", maNV);
             checkCmd.Parameters.AddWithValue("@ngay", ngayCham);
@@ -59,7 +62,7 @@ namespace chamcong
             if (exists > 0) return false;
 
             // Chưa chấm thì thêm
-            string insertQuery = "INSERT INTO chamcong (MaNhanVien, ngayChamCong, caLam) VALUES (@maNV, @ngay, @ca)";
+            string insertQuery = "INSERT INTO tt_chamcong (MaNhanVien, ngayChamCong, caLam) VALUES (@maNV, @ngay, @ca)";
             MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn);
             insertCmd.Parameters.AddWithValue("@maNV", maNV);
             insertCmd.Parameters.AddWithValue("@ngay", ngayCham);

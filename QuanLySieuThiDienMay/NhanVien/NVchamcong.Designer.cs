@@ -83,6 +83,7 @@
             txt_manv.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txt_manv.Location = new Point(217, 58);
             txt_manv.Name = "txt_manv";
+            txt_manv.ReadOnly = true;
             txt_manv.Size = new Size(246, 27);
             txt_manv.TabIndex = 30;
             // 
@@ -190,6 +191,7 @@
             Controls.Add(label4);
             Controls.Add(groupBox1);
             Name = "NVchamcong";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "NVchamcong";
             Load += NVchamcong_Load;
             groupBox1.ResumeLayout(false);
